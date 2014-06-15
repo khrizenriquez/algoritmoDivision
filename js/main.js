@@ -1,11 +1,30 @@
+/*
+	autor: 			@Khrizenriquez
+	descripción: 	Por medio de dos valores ingresados, el dividendo y el divisor, se calculara el residuo y el cociente
+					para mostrar la fórmula de la división que es: 
+
+					dividendo = divisor * cociente + cociente
+*/
+
+/*
+*********************************************************************************************
+									variables globales
+*********************************************************************************************
+*/
+
+//	declarando las variables que apuntan al input que contiene el valor de dividendo y divisor y parrafo para mostrar el mensaje
 var dividendo = document.getElementById( "txtDividendo" );
 var divisor = document.getElementById( "txtDivisor" );
 var respuesta = document.getElementById( "pRespuesta" );
-
+//	declarando las variables que me servirán para los colores
 var colorRojo = "#e74c3c";
 var colorVerde = "#27ae60";
-var colorAzul = "#2980b9";
 
+/*
+*********************************************************************************************
+				llamando a lo que se ejecutara cuando inicie el programa
+*********************************************************************************************
+*/
 $( document ).on( "ready", function () {
 	$( document ).foundation();
 
@@ -25,6 +44,11 @@ $( document ).on( "ready", function () {
 	} );
 } );
 
+/*
+*********************************************************************************************
+								funciones
+*********************************************************************************************
+*/
 /*	v1 es el dividendo y el v2 es el divisor*/
 function validando ( v1, v2 ) {
 	if ( isNaN( v1 ) || v1.length == 0 ) {
@@ -47,9 +71,6 @@ function calcular ( v1, v2 ) {
 			respuesta.innerHTML = "";
 			var cociente = ( v1 / v2 );
 			var residuo = ( v1 % v2 );
-
-			console.log( parseInt( cociente ) );
-			console.log( parseInt( residuo ) );
 
 			respuesta.innerHTML = "Dividendo: " + parseInt( v1 ) + " <br />" +
 			"Divisor: " + parseInt( v2 ) + " <br />" +
